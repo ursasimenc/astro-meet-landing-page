@@ -1,0 +1,79 @@
+---
+---
+
+<footer>
+	<div class="count">
+		<div class="line"></div>
+		<div class="number">02</div>
+	</div>
+	<div class="content">
+		<h2>Experience more togehter</h2>
+		<p>Stay connected with reliable HD meetings and unlimited one-on-one and group video sessions.</p>
+		<button>Download <span>v1.3</span></button>
+	</div>
+</footer>
+
+<style lang="scss">
+	@import "../../styles/main.scss";
+
+	footer {
+		@include size(100%, 100px);
+		margin-top: 8rem;
+	}
+
+	.count {
+		@include flex(0, start, center, column);
+		position: relative;
+		top: 2rem;
+
+		.line {
+			width: 1px;
+			height: 84px;
+			background: $gray;
+		}
+
+		.number {
+			@include size(56px, 56px);
+			@include flex();
+			color: $gray;
+			border-radius: 50%;
+			border: 1px solid $gray;
+			font-weight: 900;
+			background-color: $white;
+		}
+	}
+
+	.content {
+		background: linear-gradient(to top, rgb($green, 0.85), rgb($green, 0.85)), url("../../assets/desktop/image-footer.jpg");
+		background-size: cover;
+		background-position: center;
+		color: $white;
+		text-align: center;
+		@include size(100%, 430px);
+		@include flex(2rem, center, center, column);
+
+		p {
+			max-width: 60vw;
+		}
+
+		button {
+			padding: 1rem 1.75rem;
+			border: none;
+			border-radius: 29px;
+			color: $white;
+			font-weight: 900;
+			cursor: pointer;
+			@include transition(background-color);
+
+			span {
+				color: $bright-purple;
+			}
+
+			background-color: $purple;
+
+			&:hover {
+				background-color: $bright-purple;
+			}
+		}
+	}
+</style>

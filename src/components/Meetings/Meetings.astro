@@ -1,0 +1,110 @@
+---
+import Videocall from "../../assets/desktop/image-woman-in-videocall.jpg";
+import Videochat from "../../assets/desktop/image-women-videochatting.jpg";
+import Meeting from "../../assets/desktop/image-men-in-meeting.jpg";
+import Text from "../../assets/desktop/image-man-texting.jpg";
+---
+
+<section>
+	<div class="count">
+		<div class="line"></div>
+		<div class="number">01</div>
+	</div>
+	<div class="pictures">
+		<img src={Videocall} alt="Woman in a videocall" />
+		<img src={Videochat} alt="Women videochatting" />
+		<img src={Meeting} alt="Man in a Meeting" />
+		<img src={Text} alt="Man Texting" />
+	</div>
+	<div class="text">
+		<div class="overline">Built for modern use</div>
+		<h2>Smarter meetings, all in one place</h2>
+		<p>Send messages, share files, show your screen, and record your meetings — all in one workspace. Control who can join with invite-only team access, data encryption, and data export.</p>
+	</div>
+</section>
+
+<style lang="scss">
+	@import "../../styles/main.scss";
+
+	section {
+		@include flex(5rem, start, center, column);
+		@include size(100%, 100%);
+	}
+
+	.count {
+		@include flex(0, start, center, column);
+
+		.line {
+			width: 1px;
+			height: 84px;
+			background: $gray;
+		}
+
+		.number {
+			@include size(56px, 56px);
+			@include flex();
+			color: $gray;
+			border-radius: 50%;
+			border: 1px solid $gray;
+			font-weight: 900;
+		}
+	}
+
+	.pictures {
+		@include size(auto, 100%);
+
+		img {
+			border-radius: 8px;
+		}
+	}
+
+	.text {
+		@include flex(2rem, center, center, column);
+		text-align: center;
+
+		p {
+			max-width: 600px;
+			color: $gray;
+		}
+	}
+
+	@media (min-width: 750px) {
+		.pictures {
+			@include flex(1rem, center, center, row);
+
+			img {
+				@include size(165px, 156px);
+			}
+		}
+	}
+
+	@media (max-width: 750px) {
+		.pictures {
+			@include flex(0.5rem, center, center, row);
+			img {
+				@include size(20vw, 20vw);
+			}
+		}
+	}
+
+	@media (max-width: 500px) {
+		.pictures {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			gap: 1.5rem;
+
+			img {
+				@include size(40vw, auto);
+			}
+		}
+
+		.text {
+			max-width: 70vw;
+
+			h2 {
+				max-width: 400px;
+			}
+		}
+	}
+</style>

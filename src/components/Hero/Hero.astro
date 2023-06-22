@@ -1,0 +1,118 @@
+---
+import LeftIcons from "../../assets/desktop/image-hero-left.png";
+import RightIcons from "../../assets/desktop/image-hero-right.png";
+import AllIcons from "../../assets/tablet/image-hero.png";
+---
+
+<section>
+	<div class="not_desktop">
+		<img src={AllIcons} alt="left icons" />
+	</div>
+	<div class="left">
+		<img src={LeftIcons} alt="left icons" />
+	</div>
+	<div class="center">
+		<h1>Group Chat for Everyone</h1>
+		<p>Meet makes it easy to connect with others face-to-face virtually and collaborate across any device.</p>
+		<div class="buttons">
+			<button id="download">Download <span>v1.3</span></button><button id="info">What is it?</button>
+		</div>
+	</div>
+	<div class="right">
+		<img src={RightIcons} alt="right icons" />
+	</div>
+</section>
+
+<style lang="scss">
+	@import "../../styles/main.scss";
+
+	section {
+		@include flex(2rem);
+		color: $dark-purple;
+		overflow: hidden;
+	}
+
+	.center {
+		@include flex(1.5rem, center, center, column);
+		text-align: center;
+
+		h1 {
+			max-width: 450px;
+		}
+
+		p {
+			color: $gray;
+			font-size: 16px;
+		}
+
+		.buttons {
+			@include flex(1rem);
+
+			button {
+				padding: 1rem 1.75rem;
+				border: none;
+				border-radius: 29px;
+				color: $white;
+				font-weight: 900;
+				cursor: pointer;
+				@include transition(background-color);
+
+				span {
+					color: $blue;
+				}
+			}
+
+			#download {
+				background-color: $green;
+
+				&:hover {
+					background-color: $bright-green;
+				}
+			}
+
+			#info {
+				background-color: $purple;
+
+				&:hover {
+					background-color: $bright-purple;
+				}
+			}
+		}
+	}
+
+	@media (min-width: 1101px) {
+		.not_desktop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	@media (max-width: 1100px) {
+		.center {
+			h1 {
+				font-size: 3.5rem;
+			}
+
+			p {
+				max-width: 350px;
+			}
+		}
+		.left,
+		.right {
+			display: none;
+			visibility: hidden;
+		}
+
+		.not_desktop {
+			@include flex();
+			min-width: 100vw;
+
+			img {
+				width: 110%;
+			}
+		}
+
+		section {
+			@include flex(5rem, center, center, column);
+		}
+	}
+</style>

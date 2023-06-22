@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;900&display=swap");
+
+$bright-green: rgb(112, 192, 212);
+$green: rgba(77, 150, 169, 1);
+$blue: rgba(143, 227, 249, 1);
+$pink: rgba(217, 184, 255, 1);
+$bright-purple: rgb(177, 139, 221);
+$purple: rgba(133, 95, 177, 1);
+$dark-purple: rgba(40, 40, 61, 1);
+$white: rgba(250, 250, 250, 1);
+$gray: rgba(135, 135, 157, 1);
+
+@mixin flex($gap: 0, $justify: center, $align: center, $direction: row) {
+	display: flex;
+	gap: $gap;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+@mixin transition($property: all, $duration: 0.3s, $timing: ease-in-out) {
+	transition: $property $duration $timing;
+}
+
+@mixin size($width: auto, $height: auto) {
+	width: $width;
+	height: $height;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Red Hat Display", sans-serif;
+	background-color: $white;
+	overflow-x: hidden;
+	scrollbar-gutter: stable;
+
+	&::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $white;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $gray;
+		border-radius: 12px;
+		border: 2px solid $white;
+	}
+}
+
+h1 {
+	font-size: 64px;
+	font-weight: 900;
+	font-style: normal;
+	line-height: 64px;
+}
+h2 {
+	font-size: 40px;
+	font-weight: 900;
+	font-style: normal;
+	line-height: 44px;
+}
+p {
+	font-size: 18px;
+	font-weight: 500;
+	font-style: normal;
+	line-height: 26px;
+}
+.overline {
+	font-size: 16px;
+	font-weight: 900;
+	font-style: normal;
+	line-height: 26px;
+	letter-spacing: 4px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: $green;
+}
+
+main {
+	@include flex(8rem, center, center, column);
+}
